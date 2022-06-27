@@ -6,8 +6,7 @@ import os
 import numpy as np
 import requests
 
-start_time = datetime.now()
-print(start_time)
+
 
 def postcode_corrector(postcode):
     '''The function accepts a UK postcode sting and returns corrected postcode with space in it. For example NW118NP --> NW11 8NP'''
@@ -91,7 +90,7 @@ if __name__ == "__main__":
     boxes_df['corrected Postcode'] = boxes_df['postcode'].apply(
         postcode_corrector)
 
-    boxes_df.to_csv('C:\\test_docker\\inputfiles\\boxes_geocoded.csv')
+    
 
     boxes_df['Latitude'], boxes_df['Longitude'] = zip(
         *boxes_df['corrected Postcode'].apply(geocoder))
@@ -132,5 +131,4 @@ if __name__ == "__main__":
                            'Cool Pouch Size', 'Delivery_day_Temperature_adj', 'Cool_Pouches_Needed']]
 
     boxes3_df.to_csv(RESULT_OUTPUT, index=False)
-    end_time = datetime.now()
-    print(end_time)
+    
