@@ -8,8 +8,16 @@ There was dataset given which contained delivery dates for meal kits, UK postcod
 # How to run the code.
 
 1. Pull the whole repository to a local machine.
-2. Change the path of volume mount in docker file to the current path of the project directory.
-3. run command docker compose up
+2. Change the path of volume mount in docker compose file to the current path of the project directory.
+    volumes:
+      - type: bind
+        source: C:/HelloFresh_Data_Test
+        target: /data
+        
+3. Change the path in source to the directory of the project where this code will be kept and run.  
+3. run command-- docker compose up
+
+Note - docker should be installed on the system. 
 
 # Output
 
